@@ -5,9 +5,11 @@ import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.os.IBinder;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class CornerService extends Service {
     public CornerService() {
@@ -24,6 +26,7 @@ public class CornerService extends Service {
         super.onCreate();
 
 
+        Toast.makeText(this, "CustomDisplay activated, Have Fun!", Toast.LENGTH_SHORT).show();
         WindowManager manager = (WindowManager) getSystemService(WINDOW_SERVICE);
 
 
@@ -38,7 +41,7 @@ public class CornerService extends Service {
         ivTopRight.setImageResource(R.drawable.ic_corner);
         ivBottomLeft.setImageResource(R.drawable.ic_corner);
         ivBottomRight.setImageResource(R.drawable.ic_corner);
-        ivNotch.setImageResource(R.drawable.ic_notch);
+        ivNotch.setImageResource(R.drawable.iphonenotch);
 
         ivTopRight.setRotation(90);
         ivBottomLeft.setRotation(-90);
@@ -82,4 +85,7 @@ public class CornerService extends Service {
         manager.addView(ivNotch, params);
 
     }
+
+
+
 }

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CustomScreen</string>
+    <string name="accessibility_service_label">...</string>
 </resources>
