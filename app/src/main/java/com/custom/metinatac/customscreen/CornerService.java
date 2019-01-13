@@ -62,7 +62,7 @@ public class CornerService extends Service {
                 PixelFormat.TRANSLUCENT     //Format
 
         );
-
+//hi
         //Add Views onto Screen:
         params.gravity = Gravity.TOP | Gravity.LEFT;
         manager.addView(ivTopLeft, params);
