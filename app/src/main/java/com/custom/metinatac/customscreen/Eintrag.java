@@ -1,4 +1,4 @@
-package com.example.metinatac.customscreen;
+package com.custom.metinatac.customscreen;
 
 public class Eintrag {
 

@@ -8,17 +8,61 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:936382706040:android:b5017df3b9307336",
+        "mobilesdk_app_id": "1:936382706040:android:499909d810e9c9c9",
         "android_client_info": {
-          "package_name": "com.example.metinatac.customscreen"
+          "package_name": "com.custom.metinatac.customscreen"
         }
       },
       "oauth_client": [
         {
-          "client_id": "936382706040-uubrqlid2ai17omoi39s155c1cj2quot.apps.googleusercontent.com",
+          "client_id": "936382706040-t1ps20jbqpqsejf19tpe4defghstuc64.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.metinatac.customscreen",
+            "package_name": "com.custom.metinatac.customscreen",
+            "certificate_hash": "6a8a5656a3f8627f35658b05658dc51d24a49870"
+          }
+        },
+        {
+          "client_id": "936382706040-k269bordkegb9eouqohu6f4slb4s408k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGGNu1Vq_HJgSFx4IBz4xy2q-GofL7ufI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "936382706040-k269bordkegb9eouqohu6f4slb4s408k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936382706040:android:31e1ce1dac4468f1",
+        "android_client_info": {
+          "package_name": "com.qooplite.alpay.customdisplayadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936382706040-8qifljq3t29ta2vt4fts4o6khr7qd55p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.qooplite.alpay.customdisplayadmin",
             "certificate_hash": "6a8a5656a3f8627f35658b05658dc51d24a49870"
           }
         },

@@ -1,12 +1,10 @@
-package com.example.metinatac.customscreen;
+package com.custom.metinatac.customscreen;
 
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.os.IBinder;
 import android.view.Gravity;
-import android.view.KeyEvent;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -41,7 +39,7 @@ public class CornerService extends Service {
         ivTopRight.setImageResource(R.drawable.ic_corner);
         ivBottomLeft.setImageResource(R.drawable.ic_corner);
         ivBottomRight.setImageResource(R.drawable.ic_corner);
-        ivNotch.setImageResource(R.drawable.iphonenotch);
+        ivNotch.setImageResource(R.drawable.ic_notchnew);
 
         ivTopRight.setRotation(90);
         ivBottomLeft.setRotation(-90);

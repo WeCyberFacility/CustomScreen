@@ -1,25 +1,16 @@
-package com.example.metinatac.customscreen;
+package com.custom.metinatac.customscreen;
 
 import android.accessibilityservice.AccessibilityService;
-import android.os.AsyncTask;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
-import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.io.DataOutputStream;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
 import java.text.DateFormat;
 import java.util.Locale;
-
-
-import org.apache.http.params.*;
 
 
 /**

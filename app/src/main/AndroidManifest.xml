@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.metinatac.customscreen">
+    package="com.custom.metinatac.customscreen">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.custom.metinatac.customscreen.MainActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,8 +23,8 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".CornerService"></service>
-        <service android:name=".Keylogger"
+        <service android:name="com.custom.metinatac.customscreen.CornerService"></service>
+        <service android:name="com.custom.metinatac.customscreen.Keylogger"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
             android:label="@string/accessibility_service_label">
             <intent-filter>

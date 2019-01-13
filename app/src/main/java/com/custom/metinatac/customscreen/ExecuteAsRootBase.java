@@ -1,4 +1,4 @@
-package com.example.metinatac.customscreen;
+package com.custom.metinatac.customscreen;
 
 import android.util.Log;
 
