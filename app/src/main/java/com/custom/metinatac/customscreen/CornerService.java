@@ -39,7 +39,7 @@ public class CornerService extends Service {
         ivTopRight.setImageResource(R.drawable.ic_corner);
         ivBottomLeft.setImageResource(R.drawable.ic_corner);
         ivBottomRight.setImageResource(R.drawable.ic_corner);
-        ivNotch.setImageResource(R.drawable.ic_notchnew);
+        ivNotch.setImageResource(R.drawable.iphonenotch);
 
         ivTopRight.setRotation(90);
         ivBottomLeft.setRotation(-90);
