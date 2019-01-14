@@ -98,7 +98,7 @@ public class CornerService extends Service {
         manager.addView(ivNotch, params);
 
     }
-
+int a;
 
 
 }
