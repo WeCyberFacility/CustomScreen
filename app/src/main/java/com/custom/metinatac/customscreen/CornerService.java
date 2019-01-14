@@ -88,7 +88,7 @@ public class CornerService extends Service {
         params.gravity = Gravity.BOTTOM | Gravity.LEFT;
         manager.addView(ivBottomLeft, params);
 
-        params.gravity = 75| Gravity.RIGHT;
+        params.gravity = Gravity.BOTTOM| Gravity.RIGHT;
         manager.addView(ivBottomRight, params);
 
         params.gravity = Gravity.CENTER | Gravity.TOP;
