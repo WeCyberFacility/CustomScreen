@@ -3,7 +3,10 @@ package com.custom.metinatac.customscreen;
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.PixelFormat;
+import android.os.Build;
 import android.os.IBinder;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -45,15 +48,27 @@ public class CornerService extends Service {
         ivBottomLeft.setRotation(-90);
         ivBottomRight.setRotation(180);
 
+        int LAYOUT_FLAG;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            LAYOUT_FLAG = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+        } else {
+            LAYOUT_FLAG = WindowManager.LayoutParams.TYPE_PHONE;
+        }
+
+
+
+
 
         //Creating Params
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
 
                 50,50,      //Width and height
-                WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,     // Type
+               LAYOUT_FLAG,
+               // WindowManager.LayoutParams.TYPE_WALLPAPER// Type
 
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
-                | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION
+                |WindowManager.LayoutParams.SOFT_INPUT_IS_FORWARD_NAVIGATION
+
                 | WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
                 | WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
                 | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
@@ -73,7 +88,7 @@ public class CornerService extends Service {
         params.gravity = Gravity.BOTTOM | Gravity.LEFT;
         manager.addView(ivBottomLeft, params);
 
-        params.gravity = Gravity.BOTTOM | Gravity.RIGHT;
+        params.gravity = 75| Gravity.RIGHT;
         manager.addView(ivBottomRight, params);
 
         params.gravity = Gravity.CENTER | Gravity.TOP;
